@@ -4,6 +4,7 @@
 void foo(int *x) // x=a
 {
     x[2] = 99;
+    *(x + 2) = 99; // does the same thing
 }
 
 int main(void)
