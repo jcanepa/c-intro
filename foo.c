@@ -3,12 +3,23 @@
 
 int main(void)
 {
-    char *buf = "Hello, world!\n";
-    write(1, buf, 14);
+    char c = 'B'; // character
+    char *p;      // character pointer
 
-    // first argument is file descriptor:
-    // 3 are available out of the box:
-    // 0 - standard input
-    // 1 - standard output (screen)
-    // 2 - error
+    p = &c; // & address-of operator
+            // this crates a pointer to a char
+
+    printf("%c\n", c);
+    printf("%s\n", p); // this displays weird because there's no null termination
+
+    // printf example, substituting
+    // printf("%c %d %s", 'c', 123, "hi there!");
+
+    // dereference a pointer with a deref operator
+    printf("%c\n", *p);
+}
+
+void foo(x)
+{
+    x[2] = 99;
 }
