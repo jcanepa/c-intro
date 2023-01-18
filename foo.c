@@ -1,20 +1,20 @@
 #include <stdio.h>  // printf
 #include <unistd.h> // open, close, read, write
 
-void foo(int *x) // x=a
-{
-    x[2] = 99;
-    *(x + 2) = 99; // does the same thing
-}
-
 int main(void)
 {
-    int a[] = {1, 2, 3};
-    foo(a);
+    char c = 'B'; // character
+    char *p;      // character pointer
 
-    for (int i = 0; i < 3; i++)
-    {
-        printf("%d ", a[i]);
-    }
-    printf("\n");
+    p = &c; // & address-of operator
+            // this crates a pointer to a char
+
+    printf("%c\n", c);
+    printf("%s\n", p); // this displays weird because there's no null termination
+
+    // printf example, substituting
+    // printf("%c %d %s", 'c', 123, "hi there!");
+
+    // dereference a pointer with a deref operator
+    printf("%c\n", *p);
 }
